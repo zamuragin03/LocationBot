@@ -1,0 +1,60 @@
+2023-09-14 12:41:59,662 - DEBUG - Make request: "getMe" with data: "{}" and files "None"
+2023-09-14 12:41:59,904 - DEBUG - Response for getMe: [200] "'{"ok":true,"result":{"id":6520081581,"is_bot":true,"first_name":"IPC_controlBOT","username":"IPC_controlBOT","can_join_groups":true,"can_read_all_group_messages":false,"supports_inline_queries":false}}'"
+2023-09-14 12:41:59,904 - INFO - Bot: IPC_controlBOT [@IPC_controlBOT]
+2023-09-14 12:41:59,904 - INFO - Start polling.
+2023-09-14 12:41:59,904 - DEBUG - Make request: "getWebhookInfo" with data: "{}" and files "None"
+2023-09-14 12:41:59,955 - DEBUG - Response for getWebhookInfo: [200] "'{"ok":true,"result":{"url":"","has_custom_certificate":false,"pending_update_count":0}}'"
+2023-09-14 12:41:59,956 - DEBUG - Make request: "getUpdates" with data: "{'timeout': 20}" and files "None"
+2023-09-14 12:42:16,025 - DEBUG - Response for getUpdates: [200] "'{"ok":true,"result":[{"update_id":708422016,\n"message":{"message_id":605,"from":{"id":225529144,"is_bot":false,"first_name":"I","username":"igor_just_igor","language_code":"ru"},"chat":{"id":225529144,"first_name":"I","username":"igor_just_igor","type":"private"},"date":1694684535,"text":"/result","entities":[{"offset":0,"length":7,"type":"bot_command"}]}}]}'"
+2023-09-14 12:42:16,030 - DEBUG - Received 1 updates.
+2023-09-14 12:42:16,033 - DEBUG - Make request: "sendMessage" with data: "{'chat_id': 225529144, 'text': 'Пожалуйста выберите промежуток для отчета:', 'reply_markup': '{"keyboard": [[{"text": "За сегодня"}, {"text": "За вчера"}, {"text": "За неделю"}], [{"text": "За месяц"}, {"text": "За год"}], [{"text": "Мой промежуток"}]], "resize_keyboard": true, "one_time_keyboard": true}'}" and files "None"
+2023-09-14 12:42:16,132 - DEBUG - Make request: "getUpdates" with data: "{'offset': 708422017, 'timeout': 20}" and files "None"
+2023-09-14 12:42:16,196 - DEBUG - Response for sendMessage: [200] "'{"ok":true,"result":{"message_id":606,"from":{"id":6520081581,"is_bot":true,"first_name":"IPC_controlBOT","username":"IPC_controlBOT"},"chat":{"id":225529144,"first_name":"I","username":"igor_just_igor","type":"private"},"date":1694684536,"text":"\\u041f\\u043e\\u0436\\u0430\\u043b\\u0443\\u0439\\u0441\\u0442\\u0430 \\u0432\\u044b\\u0431\\u0435\\u0440\\u0438\\u0442\\u0435 \\u043f\\u0440\\u043e\\u043c\\u0435\\u0436\\u0443\\u0442\\u043e\\u043a \\u0434\\u043b\\u044f \\u043e\\u0442\\u0447\\u0435\\u0442\\u0430:"}}'"
+2023-09-14 12:42:18,658 - DEBUG - Response for getUpdates: [200] "'{"ok":true,"result":[{"update_id":708422017,\n"message":{"message_id":607,"from":{"id":225529144,"is_bot":false,"first_name":"I","username":"igor_just_igor","language_code":"ru"},"chat":{"id":225529144,"first_name":"I","username":"igor_just_igor","type":"private"},"date":1694684538,"text":"\\u0417\\u0430 \\u043d\\u0435\\u0434\\u0435\\u043b\\u044e"}}]}'"
+2023-09-14 12:42:18,659 - DEBUG - Received 1 updates.
+2023-09-14 12:42:18,678 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:42:18,692 - DEBUG - http://0.0.0.0:3421 "GET /api/get_telegram_users HTTP/1.1" 200 722
+2023-09-14 12:42:18,694 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:42:18,709 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/225529144?date=week HTTP/1.1" 200 3880
+2023-09-14 12:42:18,715 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:42:18,719 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/5541318158?date=week HTTP/1.1" 200 2
+2023-09-14 12:42:18,720 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:42:18,727 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/479518512?date=week HTTP/1.1" 200 597
+2023-09-14 12:42:18,729 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:42:18,733 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/1479561188?date=week HTTP/1.1" 200 2
+2023-09-14 12:42:18,736 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:42:18,740 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/1029358847?date=week HTTP/1.1" 200 2
+2023-09-14 12:42:18,741 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:42:18,744 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/68550564?date=week HTTP/1.1" 200 2
+2023-09-14 12:42:18,870 - DEBUG - Make request: "sendDocument" with data: "{'chat_id': 225529144}" and files "{'document': <InputFile 'attach://GDfBp5GNeLEDaqdhtM9zdA' with file='<_io.BufferedReader name='/Users/zanuragin03/Desktop/pyprojects/Location_bot/TelegramBot/doc.xlsx'>'>}"
+2023-09-14 12:42:18,871 - DEBUG - Make request: "getUpdates" with data: "{'offset': 708422018, 'timeout': 20}" and files "None"
+2023-09-14 12:42:18,980 - DEBUG - Response for sendDocument: [200] "'{"ok":true,"result":{"message_id":608,"from":{"id":6520081581,"is_bot":true,"first_name":"IPC_controlBOT","username":"IPC_controlBOT"},"chat":{"id":225529144,"first_name":"I","username":"igor_just_igor","type":"private"},"date":1694684538,"document":{"file_name":"doc.xlsx","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","file_id":"BQACAgIAAxkDAAICYGUC1XqZINye68iNNBPqlQAB4WKOmAACyzkAArSOGEgDnFvzTPxIgjAE","file_unique_id":"AgADyzkAArSOGEg","file_size":5440}}}'"
+2023-09-14 12:42:39,001 - DEBUG - Response for getUpdates: [200] "'{"ok":true,"result":[]}'"
+2023-09-14 12:42:39,106 - DEBUG - Make request: "getUpdates" with data: "{'offset': 708422018, 'timeout': 20}" and files "None"
+2023-09-14 12:42:59,272 - DEBUG - Response for getUpdates: [200] "'{"ok":true,"result":[]}'"
+2023-09-14 12:42:59,375 - DEBUG - Make request: "getUpdates" with data: "{'offset': 708422018, 'timeout': 20}" and files "None"
+2023-09-14 12:43:19,433 - DEBUG - Response for getUpdates: [200] "'{"ok":true,"result":[]}'"
+2023-09-14 12:43:19,537 - DEBUG - Make request: "getUpdates" with data: "{'offset': 708422018, 'timeout': 20}" and files "None"
+2023-09-14 12:43:28,165 - DEBUG - Response for getUpdates: [200] "'{"ok":true,"result":[{"update_id":708422018,\n"message":{"message_id":609,"from":{"id":225529144,"is_bot":false,"first_name":"I","username":"igor_just_igor","language_code":"ru"},"chat":{"id":225529144,"first_name":"I","username":"igor_just_igor","type":"private"},"date":1694684608,"text":"\\u0417\\u0430 \\u0433\\u043e\\u0434"}}]}'"
+2023-09-14 12:43:28,166 - DEBUG - Received 1 updates.
+2023-09-14 12:43:28,177 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:43:28,188 - DEBUG - http://0.0.0.0:3421 "GET /api/get_telegram_users HTTP/1.1" 200 722
+2023-09-14 12:43:28,189 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:43:28,203 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/225529144?date=year HTTP/1.1" 200 3880
+2023-09-14 12:43:28,208 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:43:28,217 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/5541318158?date=year HTTP/1.1" 200 2
+2023-09-14 12:43:28,219 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:43:28,226 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/479518512?date=year HTTP/1.1" 200 597
+2023-09-14 12:43:28,228 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:43:28,232 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/1479561188?date=year HTTP/1.1" 200 2
+2023-09-14 12:43:28,234 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:43:28,236 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/1029358847?date=year HTTP/1.1" 200 2
+2023-09-14 12:43:28,237 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-14 12:43:28,240 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/68550564?date=year HTTP/1.1" 200 2
+2023-09-14 12:43:28,253 - DEBUG - Make request: "sendDocument" with data: "{'chat_id': 225529144}" and files "{'document': <InputFile 'attach://HtwlnfVTVsxa5nV3iPS2xQ' with file='<_io.BufferedReader name='/Users/zanuragin03/Desktop/pyprojects/Location_bot/TelegramBot/doc.xlsx'>'>}"
+2023-09-14 12:43:28,268 - DEBUG - Make request: "getUpdates" with data: "{'offset': 708422019, 'timeout': 20}" and files "None"
+2023-09-14 12:43:28,562 - DEBUG - Response for sendDocument: [200] "'{"ok":true,"result":{"message_id":610,"from":{"id":6520081581,"is_bot":true,"first_name":"IPC_controlBOT","username":"IPC_controlBOT"},"chat":{"id":225529144,"first_name":"I","username":"igor_just_igor","type":"private"},"date":1694684608,"document":{"file_name":"doc.xlsx","mime_type":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","file_id":"BQACAgIAAxkDAAICYmUC1cAsiwYEfkpmJdPP8uCnuau8AALNOQACtI4YSICYgMmGDhxSMAQ","file_unique_id":"AgADzTkAArSOGEg","file_size":5440}}}'"
+2023-09-14 12:43:48,502 - DEBUG - Response for getUpdates: [200] "'{"ok":true,"result":[]}'"
+2023-09-14 12:43:48,605 - DEBUG - Make request: "getUpdates" with data: "{'offset': 708422019, 'timeout': 20}" and files "None"
+2023-09-14 12:43:52,019 - INFO - Stop polling...
+2023-09-14 12:43:52,019 - WARNING - Goodbye!
