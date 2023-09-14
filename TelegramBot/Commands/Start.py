@@ -65,7 +65,9 @@ async def start(message: types.Message, state: FSMContext):
                                            message.from_user.first_name, message.from_user.last_name)
     await bot.send_message(
         message.chat.id,
-        'какой-то текст тут нужен.'
+        'Добрый день! Это это спецБОТ 🤖 ГК АО ИПК. \
+Благодарим за интерес к боту - если вы сотрудник 🧑‍💼 пройдите верификацию!\
+*Верификация доступна только для сотрудников ГК АО ИПК'
     )
     if TelegramUserService.IsUserActive(message.from_user.id):
         last_action_id = ActionTypeService.GetLastUserActionId(
