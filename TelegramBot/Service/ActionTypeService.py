@@ -9,7 +9,7 @@ class ActionTypeService:
         try:
             return UserActionApi.GetConcreteUserLocations(external_id=external_id)[-1].get('action')
         except:
-            return None
+            return {}
     
     def GetLastUserAction(external_id)->dict:
         try:
