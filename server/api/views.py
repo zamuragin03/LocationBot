@@ -3,7 +3,7 @@ from .serializers import *
 from rest_framework import generics
 from rest_framework.filters import OrderingFilter, SearchFilter
 from django_filters.rest_framework import DjangoFilterBackend
-from .Filters import UserActionsFilter
+from .Filters import UserActionsFilter, TelegramUserFilter
 class TelegramUserBaseModel:
     serializer_class = TelegramUserSerializer
     queryset = TelegramUser.objects.all()
@@ -27,8 +27,16 @@ class CreateTelegramUser(TelegramUserBaseModel, generics.CreateAPIView):
 class GetTelegramUser(TelegramUserBaseModel, generics.RetrieveAPIView):
     lookup_field='external_id'
 
+class UpdateTelegramUser(TelegramUserBaseModel, generics.RetrieveUpdateAPIView):
+    lookup_field='external_id'
+
 class GetTelegramUsers(TelegramUserBaseModel, generics.ListAPIView):
-    ...
+    filter_backends = [DjangoFilterBackend,  OrderingFilter, SearchFilter]
+    fields = [field.name for field in TelegramUser._meta.get_fields()]
+    ordering_fields = ['user',]
+    filterset_class = TelegramUserFilter
+
+
 
 class GetAllLocations(LocationBaseModel, generics.ListAPIView):
     ...

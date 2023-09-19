@@ -7,9 +7,12 @@ from aiogram.dispatcher import FSMContext
 from aiogram import types
 from aiogram.utils.markdown import *
 
+ADMINS = [68550564,1207352067,479518512]
 
 @dp.message_handler(commands=['result'], state='*')
 async def result(message: types.Message, state: FSMContext):
+    if message.from_user.id not in ADMINS:
+        return
     await bot.send_message(
         message.chat.id,
         'Пожалуйста выберите промежуток для отчета:',
@@ -57,7 +60,7 @@ async def end_date(message: types.Message, state: FSMContext):
         document=types.InputFile(str(path_to_file))
     )
 
-
+    await FSMUser.beginning.set()
 
 @dp.message_handler(commands=['start'], state='*')
 async def start(message: types.Message, state: FSMContext):

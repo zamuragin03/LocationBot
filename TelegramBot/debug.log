@@ -1,24 +1,47 @@
-2023-09-14 23:28:51,643 - DEBUG - Make request: "getMe" with data: "{}" and files "None"
-2023-09-14 23:28:51,801 - DEBUG - Response for getMe: [200] "'{"ok":true,"result":{"id":6110702066,"is_bot":true,"first_name":"\\u0428\\u043a\\u043e\\u043b\\u0430 21 \\u0433\\u043e\\u0432\\u043d\\u043e","username":"school_21_govno_bot","can_join_groups":true,"can_read_all_group_messages":false,"supports_inline_queries":false}}'"
-2023-09-14 23:28:51,801 - INFO - Bot: Школа 21 говно [@school_21_govno_bot]
-2023-09-14 23:28:51,802 - INFO - Start polling.
-2023-09-14 23:28:51,802 - DEBUG - Make request: "getWebhookInfo" with data: "{}" and files "None"
-2023-09-14 23:28:51,854 - DEBUG - Response for getWebhookInfo: [200] "'{"ok":true,"result":{"url":"","has_custom_certificate":false,"pending_update_count":0}}'"
-2023-09-14 23:28:51,854 - DEBUG - Make request: "getUpdates" with data: "{'timeout': 20}" and files "None"
-2023-09-14 23:28:53,048 - DEBUG - Response for getUpdates: [200] "'{"ok":true,"result":[{"update_id":816757755,\n"message":{"message_id":2213,"from":{"id":225529144,"is_bot":false,"first_name":"I","username":"igor_just_igor","language_code":"ru"},"chat":{"id":225529144,"first_name":"I","username":"igor_just_igor","type":"private"},"date":1694723333,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}]}'"
-2023-09-14 23:28:53,049 - DEBUG - Received 1 updates.
-2023-09-14 23:28:53,061 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
-2023-09-14 23:28:53,072 - DEBUG - http://0.0.0.0:3421 "POST /api/create_telegram_user HTTP/1.1" 400 85
-2023-09-14 23:28:53,073 - DEBUG - Make request: "sendMessage" with data: "{'chat_id': 225529144, 'text': 'Добрый день! Это это спецБОТ 🤖 ГК АО ИПК. Благодарим за интерес к боту - если вы сотрудник 🧑\u200d💼 пройдите верификацию!*Верификация доступна только для сотрудников ГК АО ИПК'}" and files "None"
-2023-09-14 23:28:53,150 - DEBUG - Response for sendMessage: [200] "'{"ok":true,"result":{"message_id":2214,"from":{"id":6110702066,"is_bot":true,"first_name":"\\u0428\\u043a\\u043e\\u043b\\u0430 21 \\u0433\\u043e\\u0432\\u043d\\u043e","username":"school_21_govno_bot"},"chat":{"id":225529144,"first_name":"I","username":"igor_just_igor","type":"private"},"date":1694723333,"text":"\\u0414\\u043e\\u0431\\u0440\\u044b\\u0439 \\u0434\\u0435\\u043d\\u044c! \\u042d\\u0442\\u043e \\u044d\\u0442\\u043e \\u0441\\u043f\\u0435\\u0446\\u0411\\u041e\\u0422 \\ud83e\\udd16 \\u0413\\u041a \\u0410\\u041e \\u0418\\u041f\\u041a. \\u0411\\u043b\\u0430\\u0433\\u043e\\u0434\\u0430\\u0440\\u0438\\u043c \\u0437\\u0430 \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441 \\u043a \\u0431\\u043e\\u0442\\u0443 - \\u0435\\u0441\\u043b\\u0438 \\u0432\\u044b \\u0441\\u043e\\u0442\\u0440\\u0443\\u0434\\u043d\\u0438\\u043a \\ud83e\\uddd1\\u200d\\ud83d\\udcbc \\u043f\\u0440\\u043e\\u0439\\u0434\\u0438\\u0442\\u0435 \\u0432\\u0435\\u0440\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u044e!*\\u0412\\u0435\\u0440\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u044f \\u0434\\u043e\\u0441\\u0442\\u0443\\u043f\\u043d\\u0430 \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0434\\u043b\\u044f \\u0441\\u043e\\u0442\\u0440\\u0443\\u0434\\u043d\\u0438\\u043a\\u043e\\u0432 \\u0413\\u041a \\u0410\\u041e \\u0418\\u041f\\u041a"}}'"
-2023-09-14 23:28:53,153 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
-2023-09-14 23:28:53,161 - DEBUG - http://0.0.0.0:3421 "GET /api/get_telegram_user/225529144 HTTP/1.1" 200 113
-2023-09-14 23:28:53,163 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
-2023-09-14 23:28:53,169 - DEBUG - http://0.0.0.0:3421 "GET /api/get_concrete_user_actions/225529144 HTTP/1.1" 200 2
-2023-09-14 23:28:53,173 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
-2023-09-14 23:28:53,191 - DEBUG - http://0.0.0.0:3421 "GET /api/get_locations HTTP/1.1" 200 506
-2023-09-14 23:28:53,192 - DEBUG - Make request: "sendMessage" with data: "{'chat_id': 225529144, 'text': 'Ваш профиль активирован\nВыберите филиал', 'parse_mode': 'markdown', 'reply_markup': '{"keyboard": [[{"text": "Ленинский"}], [{"text": "Красная площадь"}], [{"text": "Алабушево"}], [{"text": "ИК Руднево"}], [{"text": "Тверская"}], [{"text": "Октябрьская"}]], "resize_keyboard": true, "one_time_keyboard": true}'}" and files "None"
-2023-09-14 23:28:53,193 - DEBUG - Make request: "getUpdates" with data: "{'offset': 816757756, 'timeout': 20}" and files "None"
-2023-09-14 23:28:53,288 - DEBUG - Response for sendMessage: [200] "'{"ok":true,"result":{"message_id":2215,"from":{"id":6110702066,"is_bot":true,"first_name":"\\u0428\\u043a\\u043e\\u043b\\u0430 21 \\u0433\\u043e\\u0432\\u043d\\u043e","username":"school_21_govno_bot"},"chat":{"id":225529144,"first_name":"I","username":"igor_just_igor","type":"private"},"date":1694723333,"text":"\\u0412\\u0430\\u0448 \\u043f\\u0440\\u043e\\u0444\\u0438\\u043b\\u044c \\u0430\\u043a\\u0442\\u0438\\u0432\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\n\\u0412\\u044b\\u0431\\u0435\\u0440\\u0438\\u0442\\u0435 \\u0444\\u0438\\u043b\\u0438\\u0430\\u043b"}}'"
-2023-09-14 23:28:58,856 - INFO - Stop polling...
-2023-09-14 23:28:58,859 - WARNING - Goodbye!
+2023-09-19 16:39:15,982 - DEBUG - Make request: "getMe" with data: "{}" and files "None"
+2023-09-19 16:39:16,153 - DEBUG - Response for getMe: [200] "'{"ok":true,"result":{"id":6110702066,"is_bot":true,"first_name":"\\u0428\\u043a\\u043e\\u043b\\u0430 21 \\u0433\\u043e\\u0432\\u043d\\u043e","username":"school_21_govno_bot","can_join_groups":true,"can_read_all_group_messages":false,"supports_inline_queries":false}}'"
+2023-09-19 16:39:16,153 - INFO - Bot: Школа 21 говно [@school_21_govno_bot]
+2023-09-19 16:39:16,154 - INFO - Scheduler started
+2023-09-19 16:39:16,154 - INFO - Added job "check_notification" to job store "default"
+2023-09-19 16:39:16,154 - DEBUG - Looking for jobs to run
+2023-09-19 16:39:16,154 - DEBUG - Next wakeup is due at 2023-09-19 16:39:26.154612+03:00 (in 9.999766 seconds)
+2023-09-19 16:39:16,154 - DEBUG - Looking for jobs to run
+2023-09-19 16:39:16,154 - DEBUG - Next wakeup is due at 2023-09-19 16:39:26.154612+03:00 (in 9.999663 seconds)
+2023-09-19 16:39:16,155 - INFO - Start polling.
+2023-09-19 16:39:16,155 - DEBUG - Make request: "getWebhookInfo" with data: "{}" and files "None"
+2023-09-19 16:39:16,205 - DEBUG - Response for getWebhookInfo: [200] "'{"ok":true,"result":{"url":"","has_custom_certificate":false,"pending_update_count":0}}'"
+2023-09-19 16:39:16,205 - DEBUG - Make request: "getUpdates" with data: "{'timeout': 20}" and files "None"
+2023-09-19 16:39:26,157 - DEBUG - Looking for jobs to run
+2023-09-19 16:39:26,159 - DEBUG - Next wakeup is due at 2023-09-19 16:39:36.154612+03:00 (in 9.995601 seconds)
+2023-09-19 16:39:26,159 - INFO - Running job "check_notification (trigger: interval[0:00:10], next run at: 2023-09-19 16:39:36 MSK)" (scheduled at 2023-09-19 16:39:26.154612+03:00)
+2023-09-19 16:39:26,199 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-19 16:39:26,213 - DEBUG - http://0.0.0.0:3421 "GET /api/get_telegram_users?is_notificated=False HTTP/1.1" 200 139
+2023-09-19 16:39:26,215 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-19 16:39:26,223 - DEBUG - http://0.0.0.0:3421 "PATCH /api/update_telegram_user/225529144 HTTP/1.1" 200 136
+2023-09-19 16:39:26,224 - DEBUG - Make request: "sendMessage" with data: "{'chat_id': 225529144, 'text': 'Ваш профиль активирован, приятной работы'}" and files "None"
+2023-09-19 16:39:26,617 - DEBUG - Response for sendMessage: [200] "'{"ok":true,"result":{"message_id":2222,"from":{"id":6110702066,"is_bot":true,"first_name":"\\u0428\\u043a\\u043e\\u043b\\u0430 21 \\u0433\\u043e\\u0432\\u043d\\u043e","username":"school_21_govno_bot"},"chat":{"id":225529144,"first_name":"I","username":"igor_just_igor","type":"private"},"date":1695130766,"text":"\\u0412\\u0430\\u0448 \\u043f\\u0440\\u043e\\u0444\\u0438\\u043b\\u044c \\u0430\\u043a\\u0442\\u0438\\u0432\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d, \\u043f\\u0440\\u0438\\u044f\\u0442\\u043d\\u043e\\u0439 \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b"}}'"
+2023-09-19 16:39:26,617 - INFO - Job "check_notification (trigger: interval[0:00:10], next run at: 2023-09-19 16:39:36 MSK)" executed successfully
+2023-09-19 16:39:36,156 - DEBUG - Looking for jobs to run
+2023-09-19 16:39:36,158 - DEBUG - Next wakeup is due at 2023-09-19 16:39:46.154612+03:00 (in 9.996373 seconds)
+2023-09-19 16:39:36,158 - INFO - Running job "check_notification (trigger: interval[0:00:10], next run at: 2023-09-19 16:39:46 MSK)" (scheduled at 2023-09-19 16:39:36.154612+03:00)
+2023-09-19 16:39:36,161 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-19 16:39:36,169 - DEBUG - http://0.0.0.0:3421 "GET /api/get_telegram_users?is_notificated=False HTTP/1.1" 200 2
+2023-09-19 16:39:36,169 - INFO - Job "check_notification (trigger: interval[0:00:10], next run at: 2023-09-19 16:39:46 MSK)" executed successfully
+2023-09-19 16:39:36,257 - DEBUG - Response for getUpdates: [200] "'{"ok":true,"result":[]}'"
+2023-09-19 16:39:36,358 - DEBUG - Make request: "getUpdates" with data: "{'timeout': 20}" and files "None"
+2023-09-19 16:39:46,156 - DEBUG - Looking for jobs to run
+2023-09-19 16:39:46,159 - DEBUG - Next wakeup is due at 2023-09-19 16:39:56.154612+03:00 (in 9.995595 seconds)
+2023-09-19 16:39:46,159 - INFO - Running job "check_notification (trigger: interval[0:00:10], next run at: 2023-09-19 16:39:56 MSK)" (scheduled at 2023-09-19 16:39:46.154612+03:00)
+2023-09-19 16:39:46,162 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-19 16:39:46,169 - DEBUG - http://0.0.0.0:3421 "GET /api/get_telegram_users?is_notificated=False HTTP/1.1" 200 2
+2023-09-19 16:39:46,170 - INFO - Job "check_notification (trigger: interval[0:00:10], next run at: 2023-09-19 16:39:56 MSK)" executed successfully
+2023-09-19 16:39:56,156 - DEBUG - Looking for jobs to run
+2023-09-19 16:39:56,159 - DEBUG - Next wakeup is due at 2023-09-19 16:40:06.154612+03:00 (in 9.995590 seconds)
+2023-09-19 16:39:56,159 - INFO - Running job "check_notification (trigger: interval[0:00:10], next run at: 2023-09-19 16:40:06 MSK)" (scheduled at 2023-09-19 16:39:56.154612+03:00)
+2023-09-19 16:39:56,162 - DEBUG - Starting new HTTP connection (1): 0.0.0.0:3421
+2023-09-19 16:39:56,169 - DEBUG - http://0.0.0.0:3421 "GET /api/get_telegram_users?is_notificated=False HTTP/1.1" 200 2
+2023-09-19 16:39:56,170 - INFO - Job "check_notification (trigger: interval[0:00:10], next run at: 2023-09-19 16:40:06 MSK)" executed successfully
+2023-09-19 16:39:56,411 - DEBUG - Response for getUpdates: [200] "'{"ok":true,"result":[]}'"
+2023-09-19 16:39:56,513 - DEBUG - Make request: "getUpdates" with data: "{'timeout': 20}" and files "None"
+2023-09-19 16:39:56,522 - INFO - Stop polling...
+2023-09-19 16:39:56,522 - WARNING - Goodbye!

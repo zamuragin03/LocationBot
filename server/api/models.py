@@ -8,12 +8,17 @@ class TelegramUser(models.Model):
     username = models.CharField(max_length=256, null=True,blank=True, verbose_name='Ник в тг')
     first_name = models.CharField(max_length=256, null=True, blank=True,verbose_name='Имя в тг')
     second_name = models.CharField(max_length=256, null=True, blank=True,verbose_name='Фамилия в тг')
+    is_notificated = models.BooleanField(default=True)
 
     def __str__(self) -> str:
         if self.username is not None:
             return self.username
         return str(self.external_id)
-    
+
+    def save(self, *args, **kwargs):
+        if self.is_active==True:
+            self.is_notificated=False
+        super(TelegramUser, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Telegram пользователь'

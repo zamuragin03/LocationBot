@@ -18,9 +18,11 @@ class TGUSerApi:
     def GetTelegramUser(external_id) -> dict:
         return requests.get(PROXY+'get_telegram_user/' + str(external_id),).json()
     
-    def GetAllTelegramUsers() -> dict:
-        return requests.get(PROXY+'get_telegram_users').json()
+    def GetAllTelegramUsers(**kwargs) -> dict:
+        return requests.get(PROXY+'get_telegram_users',params=kwargs).json()
 
+    def UpdateTelegramUser(external_id, **kwargs):
+        return requests.patch(PROXY + 'update_telegram_user/' + str(external_id), data=kwargs)
 
 class LocationApi:
 
