@@ -4,7 +4,7 @@ from random import randint
 from Service import TelegramUserService
 
 def CheckNotification():
-    scheduler.add_job(check_notification, 'interval', minutes=10,
+    scheduler.add_job(check_notification, 'interval', seconds=10,
                       args=(dp,) )
 
 
