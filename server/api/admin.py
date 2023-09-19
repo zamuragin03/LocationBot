@@ -12,7 +12,8 @@ class UserAdmin(admin.ModelAdmin):
         'is_active',
         'username',
         'first_name',
-        'second_name'
+        'second_name',
+        'is_notificated'
     )
     list_per_page = 50
     list_display_links = list_display
