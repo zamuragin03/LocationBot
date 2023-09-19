@@ -15,11 +15,6 @@ class TelegramUser(models.Model):
             return self.username
         return str(self.external_id)
 
-    def save(self, *args, **kwargs):
-        if self.is_active==True:
-            self.is_notificated=False
-        super(TelegramUser, self).save(*args, **kwargs)
-
     class Meta:
         verbose_name = 'Telegram пользователь'
         verbose_name_plural = 'Telegram пользователи'
