@@ -7,7 +7,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram import types
 from aiogram.utils.markdown import *
 
-ADMINS = [68550564,1207352067,479518512]
+ADMINS = [68550564,1207352067,479518512, 225529144]
 
 @dp.message_handler(commands=['result'], state='*')
 async def result(message: types.Message, state: FSMContext):
@@ -36,6 +36,7 @@ async def choosing_interval(message: types.Message, state: FSMContext):
         message.chat.id,
         document=types.InputFile(str(path_to_file))
     )
+    await FSMUser.beginning.set()
 
 
 @dp.message_handler(state=FSMUser.typing_start_date)
