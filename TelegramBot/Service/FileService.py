@@ -37,9 +37,9 @@ class FileService:
             if len(actions) %2!=0:
                 last_action = [
                     FileService.GetUser(user),
-                    action1.get('location').get('name'),
+                    actions[-1].get('location').get('name'),
                     'Не закрыт',
-                    FileService.GetPrettyDateTime(action1.get('time')),
+                    FileService.GetPrettyDateTime(actions[-1].get('time')),
                     'Не закрыт',
                     'Не закрыт',
                 ]
@@ -76,9 +76,9 @@ class FileService:
             if len(actions) %2!=0:
                 last_action = [
                     FileService.GetUser(user),
-                    action1.get('location').get('name'),
+                    actions[-1].get('location').get('name'),
                     'Не закрыт',
-                    FileService.GetPrettyDateTime(action1.get('time')),
+                    FileService.GetPrettyDateTime(actions[-1].get('time')),
                     'Не закрыт',
                     'Не закрыт',
                 ]
