@@ -7,7 +7,7 @@ class ActionTypeService:
 
     def GetLastUserActionId(external_id):
         try:
-            return UserActionApi.GetConcreteUserLocations(external_id=external_id)[-1].get('action')
+            return UserActionApi.GetConcreteUserLocations(external_id=external_id)[-1]
         except:
             return {}
     

@@ -77,9 +77,10 @@ async def start(message: types.Message, state: FSMContext):
         last_action_id = ActionTypeService.GetLastUserActionId(
             message.from_user.id)
         message_to_send = 'Ваш профиль активирован'
-        if last_action_id.get('id') == 1:
+        if last_action_id.get('action').get('id') == 1:
             last_location_name = LocationService.GetLocationNameById(
-                last_action_id.get('id'))
+                last_action_id.get('location').get('id')
+                )
             message_to_send += f'\nCейчас вы находитесь в {bold(f"{last_location_name}")}'
         await bot.send_message(
             message.chat.id,
@@ -104,7 +105,7 @@ async def choosing_user_action(message: types.Message, state: FSMContext):
     await bot.send_message(
         message.chat.id,
         'Выберите действие',
-        reply_markup=choosing_action_with_location_kb(last_action_id.get('id'))
+        reply_markup=choosing_action_with_location_kb(last_action_id.get('action').get('id'))
     )
     async with state.proxy() as data:
         data['selected_id'] = selected_location_id
