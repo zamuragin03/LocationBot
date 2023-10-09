@@ -34,6 +34,16 @@ class FileService:
                     FileService.GetPrettyDateTime(action2.get('time')),
                     FileService.ConvertTwoDateTimesToStringInfo(action1.get('time'), action2.get('time'))]
                 df.loc[len(df.index)] = append_list
+            if len(actions) %2!=0:
+                last_action = [
+                    FileService.GetUser(user),
+                    action1.get('location').get('name'),
+                    'Не закрыт',
+                    FileService.GetPrettyDateTime(action1.get('time')),
+                    'Не закрыт',
+                    'Не закрыт',
+                ]
+                df.loc[len(df.index)] = last_action
         path_to_file = Path(__file__).parent.parent.joinpath("doc.xlsx")
         df.to_excel(path_to_file, index=False)
         return path_to_file
@@ -52,6 +62,8 @@ class FileService:
         for user in all_users:
             actions = UserActionApi.GetConcreteUserLocations(
                 external_id=user.get('external_id'), date_range_before=date_range_before, date_range_after=date_range_after)
+            print(actions)
+            print(len(actions))
             for action1, action2 in zip(actions[0::2], actions[1::2]):
                 append_list = [
                     FileService.GetUser(user),
@@ -61,6 +73,16 @@ class FileService:
                     FileService.GetPrettyDateTime(action2.get('time')),
                     FileService.ConvertTwoDateTimesToStringInfo(action1.get('time'), action2.get('time'))]
                 df.loc[len(df.index)] = append_list
+            if len(actions) %2!=0:
+                last_action = [
+                    FileService.GetUser(user),
+                    action1.get('location').get('name'),
+                    'Не закрыт',
+                    FileService.GetPrettyDateTime(action1.get('time')),
+                    'Не закрыт',
+                    'Не закрыт',
+                ]
+                df.loc[len(df.index)] = last_action
         path_to_file = Path(__file__).parent.parent.joinpath("doc.xlsx")
         df.to_excel(path_to_file, index=False)
         return path_to_file
