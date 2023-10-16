@@ -102,10 +102,14 @@ async def choosing_user_action(message: types.Message, state: FSMContext):
     selected_location_id = LocationService.GetLocationIdByName(message.text)
     last_action_id = ActionTypeService.GetLastUserActionId(
         message.from_user.id)
+    try:
+        act_id = last_action_id.get('action').get('id')
+    except:
+        act_id = 2
     await bot.send_message(
         message.chat.id,
         'Выберите действие',
-        reply_markup=choosing_action_with_location_kb(last_action_id.get('action').get('id'))
+        reply_markup=choosing_action_with_location_kb(act_id)
     )
     async with state.proxy() as data:
         data['selected_id'] = selected_location_id
