@@ -15,4 +15,4 @@ class  TelegramUserFilter(filter.FilterSet):
     is_notificated = filter.BooleanFilter(field_name ='is_notificated')
     class Meta:
         model = TelegramUser
-        fields = ('is_notificated',)
+        fields = ('is_notificated','is_active')

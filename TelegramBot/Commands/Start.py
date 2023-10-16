@@ -67,21 +67,18 @@ async def end_date(message: types.Message, state: FSMContext):
 async def start(message: types.Message, state: FSMContext):
     TelegramUserService.CreateTelegramUser(message.from_user.id, message.from_user.username,
                                            message.from_user.first_name, message.from_user.last_name)
-    await bot.send_message(
-        message.chat.id,
-        'Добрый день! Это это спецБОТ 🤖 ГК АО ИПК. \
-Благодарим за интерес к боту - если вы сотрудник 🧑‍💼 пройдите верификацию!\
-*Верификация доступна только для сотрудников ГК АО ИПК'
-    )
     if TelegramUserService.IsUserActive(message.from_user.id):
         last_action_id = ActionTypeService.GetLastUserActionId(
             message.from_user.id)
-        message_to_send = 'Ваш профиль активирован'
-        if last_action_id.get('action').get('id') == 1:
-            last_location_name = LocationService.GetLocationNameById(
-                last_action_id.get('location').get('id')
-                )
-            message_to_send += f'\nCейчас вы находитесь в {bold(f"{last_location_name}")}'
+        message_to_send = 'Добрый день! Выберите пожалуйста свой филиал.'
+        try:
+            if last_action_id.get('action').get('id') == 1:
+                last_location_name = LocationService.GetLocationNameById(
+                    last_action_id.get('location').get('id')
+                    )
+                message_to_send += f'\nCейчас вы находитесь в {bold(f"{last_location_name}")}'
+        except:
+            ...
         await bot.send_message(
             message.chat.id,
             f'{message_to_send}\nВыберите филиал',
@@ -92,6 +89,9 @@ async def start(message: types.Message, state: FSMContext):
     else:
         await bot.send_message(
             message.chat.id,
+            'Добрый день! Это это спецБОТ 🤖 ГК АО ИПК. \
+Благодарим за интерес к боту - если вы сотрудник 🧑‍💼 пройдите верификацию!\
+*Верификация доступна только для сотрудников ГК АО ИПК\n\n'+
             'Ожидайте, пока ваш профиль будет подтверждён администрацией',
             reply_markup=ReplyKeyboardRemove()
         )
@@ -142,7 +142,7 @@ async def handle_location(message: types.Message, state: FSMContext):
             ...
         await bot.send_message(
             message.chat.id,
-            'Отличная работа',
+            'Отличная работа👍🏼👍🏼👍🏼',
             reply_markup=start_kb()
         )
         await FSMUser.beginning.set()
@@ -164,7 +164,7 @@ async def leave(message: types.Message, state: FSMContext):
             user=user_id, action=2, location=data['selected_id'])
     await bot.send_message(
         message.chat.id,
-        'Вы вышли из филиала',
+        'Вы вышли из филиала 👋🏼👋🏼👋🏼',
         reply_markup=start_kb()
     )
     await FSMUser.beginning.set()

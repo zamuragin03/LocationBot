@@ -8,7 +8,7 @@ class TelegramUser(models.Model):
     username = models.CharField(max_length=256, null=True,blank=True, verbose_name='Ник в тг')
     first_name = models.CharField(max_length=256, null=True, blank=True,verbose_name='Имя в тг')
     second_name = models.CharField(max_length=256, null=True, blank=True,verbose_name='Фамилия в тг')
-    is_notificated = models.BooleanField(default=True)
+    is_notificated = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         if self.username is not None:
