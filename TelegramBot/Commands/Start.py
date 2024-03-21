@@ -7,7 +7,8 @@ from aiogram.dispatcher import FSMContext
 from aiogram import types
 from aiogram.utils.markdown import *
 
-ADMINS = [68550564,1207352067,479518512, 225529144]
+ADMINS = [68550564, 1207352067, 479518512, 225529144,959085794]
+
 
 @dp.message_handler(commands=['result'], state='*')
 async def result(message: types.Message, state: FSMContext):
@@ -63,6 +64,7 @@ async def end_date(message: types.Message, state: FSMContext):
 
     await FSMUser.beginning.set()
 
+
 @dp.message_handler(commands=['start'], state='*')
 async def start(message: types.Message, state: FSMContext):
     TelegramUserService.CreateTelegramUser(message.from_user.id, message.from_user.username,
@@ -75,7 +77,7 @@ async def start(message: types.Message, state: FSMContext):
             if last_action_id.get('action').get('id') == 1:
                 last_location_name = LocationService.GetLocationNameById(
                     last_action_id.get('location').get('id')
-                    )
+                )
                 message_to_send += f'\nCейчас вы находитесь в {bold(f"{last_location_name}")}'
         except:
             ...
@@ -91,7 +93,7 @@ async def start(message: types.Message, state: FSMContext):
             message.chat.id,
             'Добрый день! Это это спецБОТ 🤖 ГК АО ИПК. \
 Благодарим за интерес к боту - если вы сотрудник 🧑‍💼 пройдите верификацию!\
-*Верификация доступна только для сотрудников ГК АО ИПК\n\n'+
+*Верификация доступна только для сотрудников ГК АО ИПК\n\n' +
             'Ожидайте, пока ваш профиль будет подтверждён администрацией',
             reply_markup=ReplyKeyboardRemove()
         )
